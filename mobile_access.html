@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>🚗 Jeep Viagem - Acesso Mobile</title>
+    <style>
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          sans-serif;
+        background: linear-gradient(135deg, #ffd700, #ffa500);
+        color: #000;
+        margin: 0;
+        padding: 20px;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .container {
+        background: white;
+        border-radius: 20px;
+        padding: 40px;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        text-align: center;
+        max-width: 500px;
+        width: 100%;
+      }
+
+      h1 {
+        font-size: 2.5rem;
+        margin-bottom: 10px;
+        color: #333;
+      }
+
+      .subtitle {
+        color: #666;
+        margin-bottom: 30px;
+        font-size: 1.1rem;
+      }
+
+      .qr-container {
+        background: #f8f9fa;
+        padding: 20px;
+        border-radius: 15px;
+        margin: 20px 0;
+      }
+
+      .qr-code {
+        width: 200px;
+        height: 200px;
+        margin: 0 auto;
+        background: white;
+        border: 2px solid #ddd;
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 0.9rem;
+        color: #666;
+      }
+
+      .url-box {
+        background: #f1f3f4;
+        padding: 15px;
+        border-radius: 10px;
+        font-family: "Courier New", monospace;
+        word-break: break-all;
+        margin: 15px 0;
+        border: 2px dashed #ccc;
+      }
+
+      .instructions {
+        text-align: left;
+        background: #e8f5e8;
+        padding: 20px;
+        border-radius: 10px;
+        margin: 20px 0;
+      }
+
+      .instructions h3 {
+        color: #2e7d32;
+        margin-top: 0;
+      }
+
+      .step {
+        margin: 10px 0;
+        padding: 8px 0;
+      }
+
+      .methods {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+        margin: 20px 0;
+      }
+
+      .method {
+        background: #f8f9fa;
+        padding: 20px;
+        border-radius: 12px;
+        border: 2px solid #e9ecef;
+      }
+
+      .method h4 {
+        color: #495057;
+        margin-bottom: 10px;
+      }
+
+      .btn {
+        background: linear-gradient(135deg, #ffd700, #ffa500);
+        color: #000;
+        border: none;
+        padding: 12px 24px;
+        border-radius: 8px;
+        font-weight: bold;
+        cursor: pointer;
+        text-decoration: none;
+        display: inline-block;
+        margin: 5px;
+      }
+
+      .btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 5px 15px rgba(255, 215, 0, 0.4);
+      }
+
+      .status {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        background: #28a745;
+        color: white;
+        padding: 10px 20px;
+        border-radius: 25px;
+        font-weight: bold;
+      }
+
+      @media (max-width: 600px) {
+        .methods {
+          grid-template-columns: 1fr;
+        }
+
+        .container {
+          padding: 20px;
+          margin: 10px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="status">🟢 Servidor Ativo</div>
+
+    <div class="container">
+      <h1>🚗 Jeep Viagem</h1>
+      <p class="subtitle">Gerenciador de Viagens Mobile</p>
+
+      <div class="qr-container">
+        <div class="qr-code" id="qrcode">📱 QR Code será gerado aqui</div>
+        <p><small>Escaneie com a câmera do celular</small></p>
+      </div>
+
+      <div class="url-box" id="mobile-url">
+        http://192.168.1.115:8000/viagem_manager_mobile.html
+      </div>
+
+      <div class="methods">
+        <div class="method">
+          <h4>📱 Rede Local</h4>
+          <p>Mesmo WiFi que o PC</p>
+          <a
+            href="http://192.168.1.115:8000/viagem_manager_mobile.html"
+            class="btn"
+            target="_blank"
+          >
+            Abrir Mobile
+          </a>
+        </div>
+        <div class="method">
+          <h4>💻 Desktop</h4>
+          <p>Versão completa</p>
+          <a
+            href="http://localhost:8000/viagem_manager.html"
+            class="btn"
+            target="_blank"
+          >
+            Abrir Desktop
+          </a>
+        </div>
+      </div>
+
+      <div class="instructions">
+        <h3>📋 Como Instalar no Celular:</h3>
+        <div class="step">
+          1️⃣ <strong>Conecte</strong> o celular no mesmo WiFi
+        </div>
+        <div class="step">2️⃣ <strong>Abra</strong> o Chrome no Android</div>
+        <div class="step">
+          3️⃣ <strong>Digite</strong> a URL acima ou escaneie o QR
+        </div>
+        <div class="step">
+          4️⃣ <strong>Menu (⋮)</strong> → "Adicionar à tela inicial"
+        </div>
+        <div class="step">5️⃣ <strong>Confirme</strong> a instalação do PWA</div>
+        <div class="step">6️⃣ <strong>Use</strong> como app nativo! 🎉</div>
+      </div>
+
+      <div
+        style="margin-top: 30px; padding-top: 20px; border-top: 2px solid #eee"
+      >
+        <h4>🌐 Para Hospedar Online (Permanente):</h4>
+        <a href="https://github.com" class="btn" target="_blank"
+          >GitHub Pages</a
+        >
+        <a href="https://netlify.com" class="btn" target="_blank">Netlify</a>
+        <a href="https://vercel.com" class="btn" target="_blank">Vercel</a>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/qrcode@1.5.3/build/qrcode.min.js"></script>
+    <script>
+      // Gerar QR Code
+      const canvas = document.createElement("canvas");
+      const url = "http://192.168.1.115:8000/viagem_manager_mobile.html";
+
+      QRCode.toCanvas(
+        canvas,
+        url,
+        {
+          width: 180,
+          margin: 2,
+          color: {
+            dark: "#000000",
+            light: "#FFFFFF",
+          },
+        },
+        function (error) {
+          if (error) {
+            console.error(error);
+            document.getElementById("qrcode").innerHTML = "❌ Erro ao gerar QR";
+          } else {
+            const qrContainer = document.getElementById("qrcode");
+            qrContainer.innerHTML = "";
+            qrContainer.appendChild(canvas);
+          }
+        }
+      );
+
+      // Atualizar URL dinamicamente
+      function updateLocalIP() {
+        // Em produção, isso seria feito via backend
+        console.log("URL Mobile:", url);
+      }
+
+      updateLocalIP();
+
+      // Verificar status do servidor
+      setInterval(() => {
+        fetch("/viagem_manager_mobile.html")
+          .then(() => {
+            document.querySelector(".status").innerHTML = "🟢 Servidor Ativo";
+            document.querySelector(".status").style.background = "#28a745";
+          })
+          .catch(() => {
+            document.querySelector(".status").innerHTML = "🔴 Servidor Offline";
+            document.querySelector(".status").style.background = "#dc3545";
+          });
+      }, 5000);
+    </script>
+  </body>
+</html>
