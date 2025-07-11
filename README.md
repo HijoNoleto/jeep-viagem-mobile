@@ -1,6 +1,6 @@
-# 🌐 Jeep NightEagle Web App
+# 🌐 Meu NightEagle Web App
 
-## 📋 Sistema de Entretenimento Web - NexCode Solutions V3.0
+## 📋 Sistema de Entretenimento Web - TMJ NOLETO V3.0
 
 **Plataforma:** HTML5 + CSS3 + JavaScript ES6+  
 **Compatibilidade:** Navegadores modernos, tablets, centrais multimídia  
@@ -270,4 +270,4 @@ Execute `tests/test_nexcode_system.html` para:
 
 ---
 
-_© 2024 NexCode Solutions - Sistema de Entretenimento Universal_
+_© 2025 TMJ NOLETO - Meu Sistema de Entretenimento Universal_
